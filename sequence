@@ -7,3 +7,15 @@ int sequence(int n){
     }
     return sum;
 }
+
+vector<int> subsum(vector<int> v){
+    vector<int> r;
+    for(int front=0,rear=v.size()/2;rear<=v.size();front++,rear++){
+            int sum = 0;
+            for(int i=front;i<rear;i++){
+                sum = sum + v[i];
+            }
+            r.push_back(sum);
+    }
+    return r;
+}
