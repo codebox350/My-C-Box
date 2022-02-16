@@ -1,0 +1,34 @@
+char lastNameVal(string s){
+    for(int i=0;i<s.size();i++){
+        if(s[i]==' '){
+            return s[i+1];
+        }
+    }
+    return ' ';
+}
+int comp(char a,char b){
+    if(a>b){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+vector<string> sortname(vector<string> v){
+    vector<string> list=v;
+    for(int i = 0; i < list.size()-1; i++){
+        if(comp(lastNameVal(list[i]),lastNameVal(list[i+1]))){
+            string temp = list[i];
+            list[i]=list[i+1];
+            list[i+1] = temp;
+        }
+    }
+    return list;
+}
+int main() {
+    vector<string> list = {"Bruce zz","Clark xx","Peter nn","hmm ddd","wer aaa"};
+    vector<string> sl = sortname(list);
+    for(int i=0;i<sl.size();i++){
+        cout<<sl[i]<<" ";
+    }
+    
+}
