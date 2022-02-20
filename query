@@ -1,0 +1,2 @@
+SELECT Id, CaseNumber,Status, (SELECT Id, Name FROM Attachments) FROM Case
+select id,(select id,name from Attachments) from Employment__c where id in (select Current_Employment__c from Team_Member__c where id=:id)
